@@ -15,7 +15,8 @@ The project is structured as a decentralized ETL (Extract, Transform, Load) arch
 ## 📱 Component Breakdown
 
 ### 1. iOS Client (The Shortcut)
-Since iOS Shortcuts cannot be committed as raw code, the client-side architecture relies on the native Apple HealthKit framework. 
+The client-side architecture relies on the native Apple HealthKit framework to aggregate daily biometric telemetry and push it to the remote backend pipeline.
+* **Production Template**: You can review and deploy the automated tracking client directly here: [Download iOS Shortcut Template](https://www.icloud.com/shortcuts/b138d4a3a4b04ebaabb6f96f678b2856)
 * **Data Extraction**: Interrogates the local device database daily for metrics including `Active Energy`, `Steps`, `Dietary Protein`, `Dietary Carbohydrates`, and `Dietary Fat`.
 * **Data Transformation**: Includes localized text parsing components to strip unit strings (e.g., converting `"75 g"` to a raw numeric `75`) to prevent data-type mismatches before transmitting.
 
